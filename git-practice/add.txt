@@ -1,4 +1,5 @@
 add
 edited in local
 update
+local
 remote
