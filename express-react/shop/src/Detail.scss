@@ -1,0 +1,78 @@
+@import "./Reset.scss"; //공통 사항은 다른 파일에서 import해서 사용
+
+// 변수 사용
+$mainColor: #ff0000;
+
+.red {
+  color: $mainColor;
+}
+
+// ===== nesting 문법 : selector 대신 사용 ===========================================================
+
+// div.container h4 {
+//   color: blue;
+// }
+
+// div.container div {
+//   color: green;
+// }
+
+// ↓
+// ↓
+// ↓
+
+// div.container {
+//   h4 {
+//     color: blue;
+//   }
+// }
+
+.my-alert {
+  background: #eeeeee;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  p {
+    margin-bottom: 0;
+    color: darkblue;
+  }
+}
+
+// ===== 동일한 값을 가질때 ===========================================================
+
+// 1) @extend
+.extend {
+  @extend .my-alert;
+  background: lightcyan;
+}
+
+// 2) mixin
+@mixin functionName() {
+  background: lightpink;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  p {
+    margin-bottom: 0;
+    color: white;
+  }
+}
+
+.mix-in {
+  @include functionName();
+}
+
+// animation의 시작
+.wow-enter {
+  opacity: 0;
+}
+
+// animation의 동작 시
+.wow-enter-active {
+  opacity: 1;
+  transition: all 5000ms;
+}
